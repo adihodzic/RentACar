@@ -1,0 +1,55 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.KlijentIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista klijenata</h2>
+<table class="tbl table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>KlijentId</th>
+            <th>Korisnicko ime</th>
+            <th>Lozinka</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>JMBG</th>
+            <th>Email</th>
+            <th>Adresa</th>
+            <th>Grad</th>
+            <th>Drzava</th>
+            <th>Telefon</th>
+            <td>Broj licne karte</td>
+            <th>Broj pasosa</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsK)
+        {
+            <tr>
+                <td>@x.KlijentId</td>
+                <td>@x.KorisnickoIme</td>
+                <td>@x.Lozinka</td>
+                <td>@x.Ime</td>
+                <td>@x.Prezime</td>
+                <td>@x.JMBG</td>
+                <td>@x.Email</td>
+                <td>@x.Adresa</td>
+                <td>@x.Grad</td>
+                <td>@x.Drzava</td>
+                <td>@x.Telefon</td>
+                <td>@x.BrojLK</td>
+                <td>@x.BrojPasosa</td>
+                <td>
+                    <a asp-area="AdministratorModul" asp-action="DetaljiKlijent" asp-controller="Klijent" asp-route-id="@x.KlijentId">Uredi</a>
+                    <a asp-area="AdministratorModul" asp-action="ObrisiKlijenta" asp-controller="Klijent" asp-route-id="@x.KlijentId">Obrisi</a>
+
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

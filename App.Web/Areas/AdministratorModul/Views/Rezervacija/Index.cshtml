@@ -1,0 +1,116 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.RezervacijaIndexVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_LayoutDataTable.cshtml";
+
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}
+<h2>Lista rezervacija</h2>
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet"
+      href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css" />
+<script type="text/javascript"
+        src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+<form asp-action="PrikaziPretragu" asp-controller="Rezervacija">
+
+    <div>
+        <label>Pretraga po vozilu</label>
+        <div>
+            <select asp-for="voziloID" asp-items="@Model.vozila">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Pretraga po klijentu</label>
+        <div>
+            <select asp-for="klijentID" asp-items="@Model.klijenti">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Pretraga po turist ruti</label>
+        <div>
+            <select asp-for="turistRutaID" asp-items="@Model.turistRute">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <br />
+
+    <button class="btn3d btn-danger" type="submit">Pretraga</button>
+
+    <br />
+
+    <table id="myTable" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID Rezervacije</th>
+                <th>DatumPreuzimanja</th>
+                <th>DatumVracanja</th>
+                <th>Klijent</th>
+                <th>Vozilo</th>
+                <th>Vozac</th>
+                <th>TuristRuta</th>
+                <th>TuristickiVodic</th>
+                <th>NacinPlacanja</th>
+                <th>CijenaUslugePoDanu</th>
+                <th>UkupnaCijena</th>
+                <th>Akcija</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var x in Model.rowsRzv)
+            {
+                <tr>
+                    <td>@x.RezervacijaId</td>
+                    <td>@x.DatumPreuzimanja</td>
+                    <td>@x.DatumVracanja</td>
+                    <td>@x.KlijentIme</td>
+                    <td>@x.VoziloIme</td>
+                    <td>@x.Vozac</td>
+                    <td>@x.TuristRutaIme</td>
+                    <td>@x.TuristickiVodic</td>
+                    <td>@x.NacinPlacanja</td>
+                    <td>@x.CijenaUslugePoDanu</td>
+                    <td>@x.UkupnaCijena</td>
+                    <td>
+                        <a asp-action="DetaljiRezervacija" asp-controller="Rezervacija" asp-route-id="@x.RezervacijaId">Uredi</a>
+                        @* <a asp-action="ObrisiRezervaciju" asp-controller="Rezervacija" asp-route-id="@x.RezervacijaId" >Obrisi</a>*@
+
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+
+</form>

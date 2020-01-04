@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "HomeRadnik";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>HomeRadnik</h2>
+<table align="center">
+
+    <tr>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn btn-group-justified btn btn-lg btn3d btn-info" asp-area="RadnikModul" asp-controller="Rezervacija" asp-action="Index">Lista Rezervacija</a>
+
+        </td>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class=" btn btn-group-justified btn btn-lg btn btn3d btn-info" asp-area="RadnikModul" asp-controller="Rezervacija" asp-action="DodajRezervaciju">DodajRezervacija</a>
+        </td>
+
+    </tr>
+    <tr>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn btn-group-justified btn btn-group-vertical btn btn-default btn btn-lg btn3d btn-info" asp-area="RadnikModul" asp-controller="Vozilo" asp-action="DodajVozilo">Dodaj Vozilo</a>
+        </td>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn btn-group-justified btn btn-group-vertical btn btn-default btn btn-lg btn3d btn-info" asp-area="RadnikModul" asp-controller="Vozilo" asp-action="Index">Lista Vozila</a>
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn btn-group-justified btn btn-group-vertical btn btn-default btn btn-lg btn3d btn-info" asp-area="RadnikModul" asp-controller="TuristRuta" asp-action="DodajTuristRutu">Dodaj TuristRutu</a>
+
+        </td>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center; " class="btn btn-group-justified btn btn-group-vertical btn btn-default btn btn-lg btn3d btn-info " asp-area="RadnikModul" asp-controller="TuristRuta" asp-action="Index">Lista TuristRuta</a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+

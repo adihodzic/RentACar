@@ -1,0 +1,108 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.RadnikDodajVM
+@{
+    ViewData["Title"] = "DodajRadnika";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DodajRadnika</h2>
+<h3>Admin Form</h3>
+
+
+<form width="700px" class="form-control-static" asp-action="SnimiRadnika">
+    <div>
+        <label>Korisničko ime</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="korisnickoIme" />
+
+        </div>
+    </div>
+    <div>
+        <label>Lozinka</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="lozinka" />
+
+        </div>
+    </div>
+    <div>
+        <label>ZapamtiMe</label>
+        <div>
+            <input style="width:20px; height:20px" class="input-lg" asp-for="zapamtiLozinku" />
+
+        </div>
+    </div>
+    <div>
+        <label>Ime</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Ime" />
+
+        </div>
+    </div><div>
+        <label>Prezime</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Prezime" />
+
+        </div>
+    </div>
+    <div>
+        <label>E-mail</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Email" />
+
+        </div>
+    </div>
+    <div>
+        <label>JMBG</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="JMBG" />
+
+        </div>
+    </div>
+    <div>
+        <label>Adresa</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Adresa" />
+
+        </div>
+    </div>
+    <div>
+        <label>Telefon</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Telefon" />
+
+        </div>
+    </div>
+    <div>
+        <label>Pozicija</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="Pozicija" />
+
+        </div>
+    </div>
+    <div>
+        <label>Godine Staza</label>
+        <div>
+            <input style="width:500px" class="form-control" asp-for="GodineStaza" />
+
+        </div>
+    </div>
+    <div>
+        <label>Grad</label>
+        <div>
+            <select style="width:500px" class="form-control" asp-for="gradID" asp-items="@Model.gradovi">
+                <option>(Odaberite grad)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Drzava</label>
+        <div>
+            <select style="width:500px" class="form-control" asp-for="drzavaID" asp-items="@Model.drzave">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+        <br/>
+    </div>
+    <button style="width:80px; height:40px" class="btn3d btn-danger" type="submit">Snimi</button>
+</form>

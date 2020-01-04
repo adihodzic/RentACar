@@ -1,0 +1,33 @@
+﻿@model App.Web.Areas.RadnikModul.ViewModels.TuristRutaDetaljiVM
+@{
+    ViewData["Title"] = "DetaljiTuristRuta";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetaljiTuristRuta</h2>
+
+<form width="700px" class="form-control-static" asp-action="DetaljiTuristRuta">
+    <div>
+        <label>Naziv</label>
+        <div>
+            <input asp-for="Naziv" />
+
+        </div>
+    </div>
+    <div>
+        <label>Opis</label>
+        <div>
+            <input asp-for="Opis" />
+
+        </div>
+    </div>
+    <div>
+        <label>Cijena rute po danu</label>
+        <div>
+            <input asp-for="CijenaTuristRutePoDanu" />
+
+        </div>
+    </div>
+
+    <button type="submit">Uredi</button>
+</form>

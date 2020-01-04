@@ -1,0 +1,51 @@
+﻿@model App.Web.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Index";
+    string error_poruka = (string)TempData["error_poruka"];
+    string errorPraznaPoruka = (string)TempData["errorPraznaPoruka"];
+    Layout = "~/Views/Shared/_LayoutAnonim.cshtml";
+}
+
+<h2>LoginForma</h2>
+
+<form asp-action="Login">
+    <div>
+        @Html.ActionLink("Registracija","DodajLogin","Autentifikacija")
+    </div>
+    <div>
+        <label>KorisnickoIme</label>
+        <div>
+            <input asp-for="username" />
+        </div>
+    </div>
+    <div>
+        <label>Lozinka</label>
+        <div>
+            <input asp-for="password" />
+        </div>
+    </div>
+    <div>
+        <label>Zapamti lozinku</label>
+        <div>
+            <input asp-for="ZapamtiPassword" />
+        </div>
+    </div>
+    <button type="submit">OK</button>
+</form>
+
+
+@if (error_poruka != null)
+{
+    <div id="greska">
+
+        @error_poruka
+    </div>
+}
+else
+{
+    <div id="nista">
+        @error_poruka
+
+    </div>
+   
+}

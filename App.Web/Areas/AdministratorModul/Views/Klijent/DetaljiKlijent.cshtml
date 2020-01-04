@@ -1,0 +1,107 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.KlijentDetaljiVM
+@{
+    ViewData["Title"] = "DetaljiKlijent";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetaljiKlijent</h2>
+<form width="700px" class="form-control-static" asp-action="UrediKlijent">
+
+    <div>
+        <label>KKlijent ID</label>
+        <div>
+            <input asp-for="KlijentId" value="@Model.KlijentId" />
+
+        </div>
+    </div>
+    <div>
+        <label>Korisničko ime</label>
+        <div>
+            <input asp-for="KorisnickoIme" value="@Model.KorisnickoIme" />
+
+        </div>
+    </div>
+    <div>
+        <label>Lozinka</label>
+        <div>
+            <input asp-for="Lozinka" value="@Model.Lozinka" />
+
+        </div>
+
+    </div>
+    <div>
+        <label>Ime</label>
+        <div>
+            <input asp-for="Ime" value="@Model.Ime" />
+
+        </div>
+    </div><div>
+        <label>Prezime</label>
+        <div>
+            <input asp-for="Prezime" value="@Model.Prezime" />
+
+        </div>
+    </div>
+    <div>
+        <label>E-mail</label>
+        <div>
+            <input asp-for="Email" value="@Model.Email" />
+
+        </div>
+    </div>
+    <div>
+        <label>JMBG</label>
+        <div>
+            <input asp-for="JMBG" value="@Model.JMBG" />
+
+        </div>
+    </div>
+    <div>
+        <label>Adresa</label>
+        <div>
+            <input asp-for="Adresa" value="@Model.Adresa" />
+
+        </div>
+    </div>
+    <div>
+        <label>Telefon</label>
+        <div>
+            <input asp-for="Telefon" value="@Model.Telefon" />
+
+        </div>
+    </div>
+    <div>
+        <label>Broj LK</label>
+        <div>
+            <input asp-for="BrojLK" value="@Model.BrojLK" />
+
+        </div>
+    </div>
+    <div>
+        <label>Broj pasoša</label>
+        <div>
+            <input asp-for="BrojPasosa" value="@Model.BrojPasosa" />
+
+        </div>
+    </div>
+    <div>
+        <label>Grad</label>
+        <div>
+            <select asp-for="SelectedGradID" asp-items="@Model.grad">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Drzava</label>
+        <div>
+            <select asp-for="SelectedDrzavaID" asp-items="@Model.drzava">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+    </div>
+    <button type="submit">Uredi</button>
+</form>
+

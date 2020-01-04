@@ -1,0 +1,107 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.AdministratorDodajVM
+@{
+    ViewData["Title"] = "DodajAdministratora";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Dodaj Administratora</h2>
+<h3>Administration form</h3>
+
+<form width="700px" class="form-control-static" asp-action="SnimiAdministratora">
+    <div>
+        <label>Korisničko ime</label>
+        <div>
+            <input asp-for="korisnickoIme" />
+
+        </div>
+    </div>
+    <div>
+        <label>Lozinka</label>
+        <div>
+            <input asp-for="lozinka" />
+
+        </div>
+    </div><div>
+        <label>ZapamtiMe</label>
+        <div>
+            <input class="input-sm" asp-for="zapamtiLozinku" />
+
+        </div>
+    </div>
+    <div>
+        <label>Ime</label>
+        <div>
+            <input asp-for="Ime" />
+
+        </div>
+    </div><div>
+        <label>Prezime</label>
+        <div>
+            <input asp-for="Prezime" />
+
+        </div>
+    </div>
+    <div>
+        <label>E-mail</label>
+        <div>
+            <input asp-for="Email" />
+
+        </div>
+    </div>
+    <div>
+        <label>JMBG</label>
+        <div>
+            <input asp-for="JMBG" />
+
+        </div>
+    </div>
+    <div>
+        <label>Adresa</label>
+        <div>
+            <input asp-for="Adresa" />
+
+        </div>
+    </div>
+    <div>
+        <label>Telefon</label>
+        <div>
+            <input asp-for="Telefon" />
+
+        </div>
+    </div>
+    <div>
+        <label>Izjava Zastita Podataka</label>
+        <div>
+            <input asp-for="IzjavaZastitaPodataka" />
+
+        </div>
+    </div>
+    <div>
+        <label>It Certifikat</label>
+        <div>
+            <input asp-for="ItCertifikat" />
+
+        </div>
+    </div>
+    <div>
+        <label>Grad</label>
+        <div>
+            <select asp-for="gradID" asp-items="@Model.gradovi">
+                <option>(Odaberite grad)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Drzava</label>
+        <div>
+            <select asp-for="drzavaID" asp-items="@Model.drzave">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+    </div>
+    <button style="width:80px; height:40px" class="btn3d btn-danger" type="submit">Snimi</button>
+</form>
+

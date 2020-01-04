@@ -1,0 +1,55 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.AdministratorIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista Administratora</h2>
+
+<table  class="table table-striped">
+    <thead>
+        <tr>
+            <th>Administrator ID</th>
+            <th>Korisnicko ime</th>
+            <th>Lozinka</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>JMBG</th>
+            <th>Email</th>
+            <th>Adresa</th>
+            <th>Grad</th>
+            <th>Drzava</th>
+            <th>Telefon</th>
+            <td>ItCertifikat</td>
+            <th>IzjavaZastitaPodataka</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsA)
+        {
+        <tr>
+            <td>@x.AdministratorId</td>
+            <td>@x.KorisnickoIme</td>
+            <td>@x.Lozinka</td>
+            <td>@x.Ime</td>
+            <td>@x.Prezime</td>
+            <td>@x.JMBG</td>
+            <td>@x.Email</td>
+            <td>@x.Adresa</td>
+            <td>@x.Grad</td>
+            <td>@x.Drzava</td>
+            <td>@x.Telefon</td>
+            <td>@x.ItCertifikat</td>
+            <td>@x.IzjavaZastitaPodataka</td>
+            <td>
+                <a asp-action="DetaljiAdministrator" asp-controller="Administrator" asp-route-id="@x.AdministratorId">Uredi</a>
+                <a asp-action="ObrisiAdministratora" asp-controller="Administrator" asp-route-id="@x.AdministratorId">Obrisi</a>
+
+            </td>
+        </tr>
+         }
+
+        </tbody>
+</table>

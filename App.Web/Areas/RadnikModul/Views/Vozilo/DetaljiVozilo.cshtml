@@ -1,0 +1,151 @@
+﻿@model App.Web.Areas.RadnikModul.ViewModels.VoziloDetaljiVM
+@{
+    ViewData["Title"] = "DetaljiVozilo";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+    var pathFajla = "/images/" + Model.PhotoPath;
+}
+
+<h2>Detalji Vozila</h2>
+
+<form width="700px" class="form-control-static" asp-action="UrediVozilo">
+    <div>
+        <label hidden="hidden">Vozilo ID</label>
+        <div>
+            <input asp-for="VoziloId" hidden="hidden" />
+        </div>
+
+    </div>
+
+    <div>
+        <label>Vozilo</label>
+        <div>
+            <input asp-for="NazivVozila" />
+
+        </div>
+    </div>
+    <div>
+        <label>BrojMotora</label>
+        <div>
+            <input asp-for="BrojMotora" />
+
+        </div>
+    </div>
+    <div>
+        <label>BrojSjedista</label>
+        <div>
+            <input class="input-sm" asp-for="BrojSjedista" />
+
+        </div>
+    </div>
+    <div>
+        <label>BrojVrata</label>
+        <div>
+            <input asp-for="BrojVrata" />
+
+        </div>
+    </div><div>
+        <label>GodinaProizvodnje</label>
+        <div>
+            <input asp-for="GodinaProizvodnje" />
+
+        </div>
+    </div>
+    <div>
+        <label>NazivVozila</label>
+        <div>
+            <input asp-for="NazivVozila" />
+
+        </div>
+    </div>
+    <div>
+        <label>PredjeniKilometri</label>
+        <div>
+            <input asp-for="PredjeniKilometri" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>RegOznaka</label>
+        <div>
+            <input asp-for="RegOznaka" />
+
+        </div>
+    </div>
+
+
+    <div>
+        <label>Datum registracije</label>
+        <div>
+            <input asp-for="DatumRegistracije" />
+
+        </div>
+    </div>
+    <div>
+        <label>Datum isteka registracije</label>
+        <div>
+            <input asp-for="DatumIstekaRegistracije" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>Slika</label>
+        <div>
+            <input asp-for="PhotoPath" />
+
+        </div>
+        <div>
+            <img src="@pathFajla" height="200" width="200" />
+            @*<img src="~/images/Golf.jpg" />*@
+        </div>
+    </div>
+    <div>
+        <label>Cijena vozila po danu</label>
+        <div>
+            <input asp-for="CijenaVozilaPoDanu" />
+
+        </div>
+    </div>
+    <div>
+        <label>Radnik koji je izvrsio unos</label>
+        <div>
+            <select asp-for="SelectedRadnikID" asp-items="@Model.radnici">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Tip vozila</label>
+        <div>
+            <select asp-for="SelectedTipVozilaID" asp-items="@Model.tipVozila">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Marka vozila</label>
+        <div>
+            <select asp-for="SelectedMarkaVozilaID" asp-items="@Model.markaVozila">
+                <option></option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <div>
+        <label>Vrsta goriva</label>
+        <div>
+            <select asp-for="SelectedVrstaGorivaID" asp-items="@Model.vrstaGoriva">
+                <option>(Odaberite vrstu goriva)</option>
+            </select>
+
+        </div>
+    </div>
+    <button type="submit">Uredi</button>
+</form>
+
+

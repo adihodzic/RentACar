@@ -1,0 +1,34 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.TuristickiVodicDodajVM
+@{
+    ViewData["Title"] = "DodajTuristickogVodica";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DodajTuristickogVodica</h2>
+<form asp-action="SnimiTuristickogVodica">
+    <div>
+        <label>Naziv</label>
+        <div>
+            <input asp-for="Naziv" />
+
+        </div>
+    </div>
+    <div>
+        <label>Strani jezik</label>
+        <div>
+            <input asp-for="StraniJezik" />
+
+        </div>
+    </div>
+    <div>
+        <label>Cijena vodica po danu</label>
+        <div>
+            <input asp-for="CijenaVodicaPoDanu" />
+
+        </div>
+    </div>
+
+
+    <button type="submit">Snimi</button>
+</form>
+

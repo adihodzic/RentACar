@@ -1,0 +1,93 @@
+﻿@model App.Web.Areas.KlijentModul.ViewModels.RezervacijaDetaljiVM
+@{
+    ViewData["Title"] = "DetaljiRezervacija";
+    Layout = "~/Areas/KlijentModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetaljiRezervacija</h2>
+
+<form width="700px" class="form-control-static" asp-action="DetaljiRezervacija">
+    <div>
+        <label>Rezervacija ID</label>
+        <div>
+            <input asp-for="RezervacijaId" value="@Model.RezervacijaId" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>Datum preuzimanja</label>
+        <div>
+            <input name="DatumPreuzimanja" type="datetime" value="@Model.DatumPreuzimanja" />
+
+        </div>
+    </div>
+    <div>
+        <label>Datum povratka</label>
+        <div>
+            <input name="DatumVracanja" type="datetime" value="@Model.DatumVracanja" />
+
+        </div>
+    </div><div>
+        <label>Cijena usluge po danu</label>
+        <div>
+            <input class="input-sm" asp-for="CijenaUslugePoDanu" readonly value="@Model.CijenaUslugePoDanu" />
+
+        </div>
+    </div>
+    <div>
+        <label>Ukupna cijena</label>
+        <div>
+            <input class="input-sm" asp-for="UkupnaCijena" value="@Model.UkupnaCijena" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>Vozac</label>
+        <div>
+            <select asp-for="SelectedVozacID" asp-items="@Model.vozac">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Vozilo</label>
+        <div>
+            <select asp-for="SelectedVoziloID" asp-items="@Model.vozilo">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Turist Ruta</label>
+        <div>
+            <select asp-for="SelectedTuristRutaID" asp-items="@Model.turistRuta">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Turist Ruta</label>
+        <div>
+            <select asp-for="SelectedTuristickiVodicID" asp-items="@Model.turistickiVodic">
+                <option>(Odaberite turistickog vodica)</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div>
+        <label>Klijent</label>
+        <div>
+            <select asp-for="SelectedKlijentID" asp-items="@Model.klijent">
+                <option>(Odaberite drzavu)</option>
+            </select>
+
+        </div>
+    </div>
+    <button type="submit">Uredi</button>
+</form>

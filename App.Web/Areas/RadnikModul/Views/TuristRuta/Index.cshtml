@@ -1,0 +1,37 @@
+﻿@model App.Web.Areas.RadnikModul.ViewModels.TuristRutaIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista turističkih ruta</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Cijena rute po danu</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsTR)
+        {
+        <tr>
+            <td>@x.Naziv</td>
+            <td>@x.Opis</td>
+            <td>@x.CijenaTuristRutePoDanu</td>
+            <td>
+                <a asp-action="DetaljiTuristRuta" asp-controller="TuristRuta" asp-route-id="@x.TuristRutaId" >Uredi</a>
+                <a asp-action="ObrisiTuristRutu" asp-controller="TuristRuta" asp-route-id="@x.TuristRutaId" >Obrisi</a>
+
+
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>

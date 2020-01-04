@@ -1,0 +1,137 @@
+﻿@model App.Web.Areas.RadnikModul.ViewModels.VoziloDodajVM
+@{
+    ViewData["Title"] = "DodajVozilo";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DodajVozilo</h2>
+<h3>Radnik modul</h3>
+<form enctype="multipart/form-data" width="700px" class="form-control-static" asp-action="SnimiVozilo">
+    <div>
+        <label>Boja</label>
+        <div>
+            <input asp-for="Boja" />
+
+        </div>
+    </div>
+    <div>
+        <label>BrojMotora</label>
+        <div>
+            <input asp-for="BrojMotora" />
+
+        </div>
+    </div><div>
+        <label>BrojSjedista</label>
+        <div>
+            <input class="input-sm" asp-for="BrojSjedista" />
+
+        </div>
+    </div>
+    <div>
+        <label>BrojVrata</label>
+        <div>
+            <input asp-for="BrojVrata" />
+
+        </div>
+    </div><div>
+        <label>GodinaProizvodnje</label>
+        <div>
+            <input asp-for="GodinaProizvodnje" />
+
+        </div>
+    </div>
+    <div>
+        <label>NazivVozila</label>
+        <div>
+            <input asp-for="NazivVozila" />
+
+        </div>
+    </div>
+    <div>
+        <label>PredjeniKilometri</label>
+        <div>
+            <input asp-for="PredjeniKilometri" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>RegOznaka</label>
+        <div>
+            <input asp-for="RegOznaka" />
+
+        </div>
+    </div>
+
+
+    <div>
+        <label>Datum registracije</label>
+        <div>
+            <input asp-for="DatumRegistracije" />
+
+        </div>
+    </div>
+    <div>
+        <label>Datum isteka registracije</label>
+        <div>
+            <input asp-for="DatumIstekaRegistracije" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>Photo</label>
+        <div>
+            <input asp-for="Photo" />
+
+        </div>
+    </div>
+    <div>
+        <label>Cijena vozila po danu</label>
+        <div>
+            <input asp-for="CijenaVozilaPoDanu" />
+
+        </div>
+    </div>
+
+    <div>
+        <label>Radnik koji je izvrsio unos</label>
+        <div>
+            <select asp-for="radnikID" asp-items="@Model.radnici">
+                <option>(Odaberite svoje ime)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Tip vozila</label>
+        <div>
+            <select asp-for="tipVozilaID" asp-items="@Model.tipoviVozila">
+                <option>(Odaberite tip vozila)</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <label>Marka vozila</label>
+        <div>
+            <select asp-for="markaVozilaID" asp-items="@Model.markeVozila">
+                <option></option>
+            </select>
+
+        </div>
+
+    </div>
+    <div>
+        <label>Vrsta goriva</label>
+        <div>
+            <select asp-for="vrstaGorivaID" asp-items="@Model.vrsteGoriva">
+                <option></option>
+            </select>
+
+        </div>
+    </div>
+    <button type="submit">Snimi</button>
+</form>
+
+

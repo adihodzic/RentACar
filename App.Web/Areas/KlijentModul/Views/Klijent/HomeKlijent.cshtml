@@ -1,0 +1,33 @@
+﻿@using App.Web.Helper
+@using App.Data.Models
+@{
+    ViewData["Title"] = "HomeKlijent";
+    Layout = "~/Areas/KlijentModul/Views/Shared/_Layout.cshtml";
+    KorisnickiNalog username = Context.GetLogiraniKorisnik();
+}
+
+<h2>HomeKlijent</h2>
+
+<table>
+    @*<li><a asp-area="KlijentModul" asp-controller="Klijent" asp-action="ProfilKlijent">@(username?.KorisnickoIme) Profil</a></li>*@
+
+    <tr>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn3d btn-group-justified btn3d btn-primary btn-lg" asp-area="KlijentModul" asp-controller="Klijent" asp-action="ProfilKlijent">@(username?.KorisnickoIme) Profil</a>
+
+        </td>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class=" btn3d btn-group-justified btn3d btn-primary btn-lg" asp-area="KlijentModul" asp-controller="Rezervacija" asp-action="DodajRezervaciju">DodajRezervacija</a>
+        </td>
+        <td width="400px" height="400px">
+            <a style="width:300px; height:300px; vertical-align:middle; line-height:250px; text-align:center" class="btn-group-justified btn btn-group-vertical btn-lg btn3d btn-primary" asp-area="KlijentModul" asp-controller="Rezervacija" asp-action="Index">Lista rezervacija</a>
+        </td>
+    </tr>
+   
+
+   
+
+</table>
+
+
+

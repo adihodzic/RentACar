@@ -1,0 +1,52 @@
+﻿@model App.Web.Areas.KlijentModul.ViewModels.RezervacijaIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/KlijentModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista rezervacija</h2>
+<table  class="table table-striped" style="widows:initial; ruby-span:initial; table-layout:auto">
+    <thead>
+        <tr>
+            <th>ID Rezervacije</th>
+            <th>DatumPreuzimanja</th>
+            <th>DatumVracanja</th>
+            <th>Klijent</th>
+            <th>Vozilo</th>
+            <th>Vozac</th>
+            <th>TuristRuta</th>
+            <th>TuristickiVodic</th>
+            <th>NacinPlacanja</th>
+            <th>CijenaUslugePoDanu</th>
+            <th>UkupnaCijena</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsRzv)
+        {
+        <tr>
+            <td>@x.RezervacijaId</td>
+            <td>@x.DatumPreuzimanja</td>
+            <td>@x.DatumVracanja</td>
+            <td>@x.Klijent</td>
+            <td>@x.Vozilo</td>
+            <td>@x.Vozac</td>
+            <td>@x.TuristRuta</td>
+            <td>@x.TuristickiVodic</td>
+            <td>@x.NacinPlacanja</td>
+            <td>@x.CijenaUslugePoDanu</td>
+            <td>@x.UkupnaCijena</td>
+            <td>
+                <a asp-action="DetaljiRezervacija" asp-controller="Rezervacija" asp-route-id="@x.RezervacijaId" >Uredi</a>
+                <a asp-action="ObrisiRezervaciju" asp-controller="Rezervacija" asp-route-id="@x.RezervacijaId" >Obrisi</a>
+
+
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>

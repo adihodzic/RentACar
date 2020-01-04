@@ -1,0 +1,34 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.VozacIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista vozaca</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>CijenaVozacaPoDanu</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsV)
+        {
+            <tr>
+                <td>@x.Naziv</td>
+                <td>@x.CijenaVozacaPoDanu</td>
+                <td>
+                    <a asp-action="DetaljiVozac" asp-controller="Vozac" asp-route-id="@x.VozacId">Uredi</a>
+                    <a asp-action="ObrisiVozaca" asp-controller="Vozac" asp-route-id="@x.VozacId">Obrisi</a>
+
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+﻿@model App.Web.Areas.AdministratorModul.ViewModels.VozacDodajVM
+@{
+    ViewData["Title"] = "DodajVozaca";
+    Layout = "~/Areas/AdministratorModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DodajVozaca</h2>
+
+<form asp-action="DetaljiVozac">
+    <div>
+        <label>Naziv</label>
+        <div>
+            <input asp-for="Naziv" value="@Model.Naziv" />
+
+        </div>
+    </div>
+    <div>
+        <label>CijenaVozacaPoDanu</label>
+        <div>
+            <input asp-for="CijenaVozacaPoDanu" value="@Model.CijenaVozacaPoDanu" />
+
+        </div>
+    </div>
+
+
+
+
+
+    <button type="submit">Uredi</button>
+</form>

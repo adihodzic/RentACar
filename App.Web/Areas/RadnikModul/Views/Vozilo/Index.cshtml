@@ -1,0 +1,53 @@
+﻿@model App.Web.Areas.RadnikModul.ViewModels.VoziloIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/RadnikModul/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista vozila</h2>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>NazivVozila</th>
+            <th>MarkaVozila</th>
+            <th>RegOznaka</th>
+            <th>TipVozila</th>
+            <th>Boja</th>
+            <th>BrojVrata</th>
+            <th>BrojSjedista</th>
+            <th>BrojMotora</th>
+            <th>PredjeniKilometri</th>
+            <th>VrstaGoriva</th>
+            <th>CijenaVozilaPoDanu</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model.rowsVzl)
+        {
+        <tr>
+            <td>@x.NazivVozila</td>
+            <td>@x.MarkaVozila</td>
+            <td>@x.RegOznaka</td>
+            <td>@x.TipVozila</td>
+            <td>@x.Boja</td>
+            <td>@x.BrojVrata</td>
+            <td>@x.BrojSjedista</td>
+            <td>@x.BrojMotora</td>
+            <td>@x.PredjeniKilometri</td>
+            <td>@x.VrstaGoriva</td>
+            <td>@x.CijenaVozilaPoDanu</td>
+            <td>
+                <a asp-action="DetaljiVozilo" asp-controller="Vozilo" asp-route-id="@x.VoziloId">Uredi</a>
+                <a asp-action="ObrisiVozilo" asp-controller="Vozilo" asp-route-id="@x.VoziloId">Obrisi</a>
+
+
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+
